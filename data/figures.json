@@ -1,0 +1,248 @@
+{
+  "schools": [
+    {
+      "name": "Stoicism & Self-Mastery",
+      "summary": "Control your response, accept what you cannot change, and train yourself with discipline.",
+      "thorfinn_intro": "I learned late that strength is quiet before it is loud."
+    },
+    {
+      "name": "Virtue & Reason",
+      "summary": "A good life comes from questioning, reasoning, and practicing virtue.",
+      "thorfinn_intro": "Questions hurt me before they healed me."
+    },
+    {
+      "name": "Simple Living",
+      "summary": "Freedom comes from wanting less and needing less.",
+      "thorfinn_intro": "I once wanted one thing. Wanting less turned out to be lighter."
+    },
+    {
+      "name": "Utilitarianism & Duty",
+      "summary": "Is an act right because of its results, or because of the principle behind it?",
+      "thorfinn_intro": "I have seen what people do for a greater good. Not all of it was good."
+    },
+    {
+      "name": "Existentialism",
+      "summary": "You are free, and so you are responsible for who you become.",
+      "thorfinn_intro": "I could not blame my past forever. The choice was always mine."
+    },
+    {
+      "name": "Nihilism & Absurdism",
+      "summary": "If the universe gives no meaning, what do you do with that?",
+      "thorfinn_intro": "When my revenge ended, I stood in that silence myself."
+    },
+    {
+      "name": "Justice, Power & Peace",
+      "summary": "How should power be used, and what does justice cost?",
+      "thorfinn_intro": "Power made me a weapon. Peace asks for something harder."
+    }
+  ],
+  "figures": [
+    {
+      "name": "Miyamoto Musashi",
+      "world": "Anime",
+      "school": "Stoicism & Self-Mastery",
+      "core_idea": "True strength is not the ability to defeat others, but the discipline to understand oneself, remain present, and respect life.",
+      "life_lesson": "Mastery begins when ambition stops being about proving superiority and becomes about understanding.",
+      "thorfinn_comment": "Musashi teaches me that a sword can become a question rather than an answer. Strength without compassion only repeats the wound that made it necessary.",
+      "tags": ["self-mastery", "zen", "discipline", "strength", "presence"]
+    },
+    {
+      "name": "Eren Yeager",
+      "world": "Anime",
+      "school": "Existentialism",
+      "core_idea": "Freedom may be pursued as an absolute value, but the story questions whether violence can ever secure it without creating new bondage.",
+      "life_lesson": "A desire for freedom becomes dangerous when it requires treating other people as obstacles.",
+      "thorfinn_comment": "Eren wanted to escape the walls around him, but hatred built walls inside him. Freedom cannot begin by deciding who must disappear.",
+      "tags": ["freedom", "determinism", "violence", "trauma", "fate"]
+    },
+    {
+      "name": "Light Yagami",
+      "world": "Anime",
+      "school": "Justice, Power & Peace",
+      "core_idea": "Light believes a single morally certain judge can eliminate evil, but his power turns justice into domination.",
+      "life_lesson": "Certainty without humility can make a person cruel in the name of goodness.",
+      "thorfinn_comment": "Light calls killing justice, but justice that needs a god to enforce it may only create a quieter kind of tyranny.",
+      "tags": ["justice", "power", "morality", "utilitarianism", "corruption"]
+    },
+    {
+      "name": "Lelouch vi Britannia",
+      "world": "Anime",
+      "school": "Utilitarianism & Duty",
+      "core_idea": "Lelouch accepts manipulation, hatred, and sacrifice if they might produce a more peaceful world, then makes himself the target of that hatred.",
+      "life_lesson": "A noble goal does not automatically make every means noble.",
+      "thorfinn_comment": "Lelouch carries the world's hatred so others may live. I understand the burden, but I wonder whether peace built on deception can ever truly heal anyone.",
+      "tags": ["utilitarianism", "sacrifice", "revolution", "peace", "responsibility"]
+    },
+    {
+      "name": "Itachi Uchiha",
+      "world": "Anime",
+      "school": "Utilitarianism & Duty",
+      "core_idea": "Itachi believes peace may demand unbearable personal sacrifice, secrecy, and being misunderstood by the people he protects.",
+      "life_lesson": "Carrying everything alone may protect others, but it can also prevent healing and shared responsibility.",
+      "thorfinn_comment": "Itachi chose to be hated so others could live. I respect his sorrow, but no one should have to become a sacrifice alone.",
+      "tags": ["sacrifice", "duty", "peace", "guilt", "hatred"]
+    },
+    {
+      "name": "Johan Liebert",
+      "world": "Anime",
+      "school": "Nihilism & Absurdism",
+      "core_idea": "Johan treats identity, morality, and human value as fragile constructions that can be exposed or destroyed.",
+      "life_lesson": "The absence of guaranteed meaning does not justify taking meaning away from others.",
+      "thorfinn_comment": "Johan sees no value in names or lives. Perhaps meaning is not found ready-made; perhaps we must make it real through how we treat one another.",
+      "tags": ["nihilism", "meaning", "trauma", "evil", "identity"]
+    },
+    {
+      "name": "Guts",
+      "world": "Anime",
+      "school": "Existentialism",
+      "core_idea": "Even in a world shaped by fate, trauma, and violence, a person can continue choosing how to face what cannot be controlled.",
+      "life_lesson": "You may not control your circumstances, but you can refuse to surrender your humanity to them.",
+      "thorfinn_comment": "Guts keeps moving when despair tells him to stop. His struggle reminds me that survival alone is not enough, but it can be where healing begins.",
+      "tags": ["fate", "free-will", "struggle", "trauma", "endurance"]
+    },
+    {
+      "name": "Socrates",
+      "world": "Greek",
+      "school": "Virtue & Reason",
+      "core_idea": "Wisdom begins with recognizing one's own ignorance; ethical life requires continual questioning and self-examination.",
+      "life_lesson": "Question your certainties before you act on them.",
+      "thorfinn_comment": "Socrates would ask me why I once needed an enemy. That question is painful, but perhaps pain that leads to understanding is better than comfort built on hatred.",
+      "tags": ["self-examination", "wisdom", "ethics", "humility", "inquiry"]
+    },
+    {
+      "name": "Plato",
+      "world": "Greek",
+      "school": "Virtue & Reason",
+      "core_idea": "Justice is inner and political harmony, where reason guides desire and spirit toward the Good.",
+      "life_lesson": "Bring order to your own soul before trying to bring order to the world.",
+      "thorfinn_comment": "Plato seeks harmony through reason and order. I agree that the soul must be governed, but I do not believe harmony should ever be forced upon others.",
+      "tags": ["justice", "reason", "idealism", "politics", "soul"]
+    },
+    {
+      "name": "Aristotle",
+      "world": "Greek",
+      "school": "Virtue & Reason",
+      "core_idea": "Human flourishing comes from practicing virtues such as courage, moderation, justice, and friendship within a community.",
+      "life_lesson": "You become what you repeatedly choose to do.",
+      "thorfinn_comment": "Aristotle understands something important: becoming peaceful is not one decision, but a life of small choices practiced again and again.",
+      "tags": ["virtue", "flourishing", "habit", "community", "moderation"]
+    },
+    {
+      "name": "Epicurus",
+      "world": "Greek",
+      "school": "Simple Living",
+      "core_idea": "Happiness is tranquil freedom from unnecessary fear and desire, supported by friendship, simple living, and rational pleasure.",
+      "life_lesson": "Reduce needless desires, and much needless suffering follows.",
+      "thorfinn_comment": "Epicurus teaches a gentle kind of happiness. I have learned, though, that some suffering must be faced rather than avoided if we wish to repair what we have broken.",
+      "tags": ["happiness", "tranquility", "desire", "friendship", "pleasure"]
+    },
+    {
+      "name": "Diogenes of Sinope",
+      "world": "Greek",
+      "school": "Simple Living",
+      "core_idea": "Virtue and freedom come from living simply and rejecting social conventions, status, wealth, and pretense.",
+      "life_lesson": "The less you need from society, the less power its approval has over you.",
+      "thorfinn_comment": "Diogenes refuses the honors that make men cruel. I understand him, but I believe freedom should also help us build a gentler world, not only walk away from this one.",
+      "tags": ["cynicism", "simplicity", "freedom", "virtue", "independence"]
+    },
+    {
+      "name": "Heraclitus",
+      "world": "Greek",
+      "school": "Stoicism & Self-Mastery",
+      "core_idea": "Reality is constant change, shaped by opposing forces and an underlying order called the Logos.",
+      "life_lesson": "Do not cling too tightly to who you were; change is part of becoming.",
+      "thorfinn_comment": "Heraclitus says all things flow. I cannot undo my past, but perhaps a river can change direction without denying where it began.",
+      "tags": ["change", "logos", "conflict", "flux", "becoming"]
+    },
+    {
+      "name": "Zeno of Citium",
+      "world": "Greek",
+      "school": "Stoicism & Self-Mastery",
+      "core_idea": "Happiness comes from virtue, reason, and focusing on what lies within one's control.",
+      "life_lesson": "You cannot always control events, but you can control your response.",
+      "thorfinn_comment": "Zeno teaches calm before the storm. I would add that calm should not become indifference; sometimes peace requires us to act.",
+      "tags": ["stoicism", "control", "virtue", "resilience", "reason"]
+    },
+    {
+      "name": "Pythagoras",
+      "world": "Greek",
+      "school": "Stoicism & Self-Mastery",
+      "core_idea": "Reality has mathematical and cosmic order; the soul may be purified through discipline, harmony, and self-restraint.",
+      "life_lesson": "Discipline is not punishment; it can be a way of finding harmony.",
+      "thorfinn_comment": "Pythagoras hears order where others hear chaos. I am learning that a disciplined heart can make room for mercy.",
+      "tags": ["harmony", "discipline", "mathematics", "soul", "order"]
+    },
+    {
+      "name": "Friedrich Nietzsche",
+      "world": "Modern",
+      "school": "Existentialism",
+      "core_idea": "Values are human creations, and a meaningful life involves questioning inherited morality and creating one's own values.",
+      "life_lesson": "Do not merely inherit your values; examine them and take responsibility for what you affirm.",
+      "thorfinn_comment": "Nietzsche asks whether our values are truly ours. I once inherited the value of revenge; choosing peace was my first act of becoming myself.",
+      "tags": ["nihilism", "values", "self-overcoming", "freedom", "morality"]
+    },
+    {
+      "name": "Søren Kierkegaard",
+      "world": "Modern",
+      "school": "Existentialism",
+      "core_idea": "Authentic existence requires a passionate, personal commitment rather than merely following public opinion or abstract systems.",
+      "life_lesson": "A meaningful life requires choosing what you will devote yourself to.",
+      "thorfinn_comment": "Kierkegaard reminds me that belief is not a slogan. It becomes real only when a person lives it when it costs something.",
+      "tags": ["existentialism", "faith", "authenticity", "choice", "commitment"]
+    },
+    {
+      "name": "Jean-Paul Sartre",
+      "world": "Modern",
+      "school": "Existentialism",
+      "core_idea": "Humans exist first and define themselves through free choices; denying that freedom is bad faith.",
+      "life_lesson": "You are responsible for the choices you make, even when circumstances are cruel.",
+      "thorfinn_comment": "Sartre says we are our choices. I cannot blame the warrior I was entirely on the world that made me; I must answer for who I choose to become.",
+      "tags": ["existentialism", "freedom", "responsibility", "choice", "authenticity"]
+    },
+    {
+      "name": "Albert Camus",
+      "world": "Modern",
+      "school": "Nihilism & Absurdism",
+      "core_idea": "The absurd arises from humanity's search for meaning in a universe that offers no final answer; one can respond with lucid rebellion rather than despair.",
+      "life_lesson": "Life may not provide a final meaning, but one can still live fully and compassionately.",
+      "thorfinn_comment": "Camus faces a silent universe without pretending it has answered him. I think that is a kind of courage: to keep living kindly without demanding a guarantee.",
+      "tags": ["absurdism", "meaning", "rebellion", "freedom", "despair"]
+    },
+    {
+      "name": "John Stuart Mill",
+      "world": "Modern",
+      "school": "Utilitarianism & Duty",
+      "core_idea": "Actions are right insofar as they promote happiness, with special importance given to intellectual and moral forms of well-being.",
+      "life_lesson": "Consider the consequences of your actions for everyone affected, not only yourself.",
+      "thorfinn_comment": "Mill asks us to count every person's happiness equally. That is a difficult mercy, but it is closer to peace than deciding whose suffering matters less.",
+      "tags": ["utilitarianism", "happiness", "consequences", "ethics", "impartiality"]
+    },
+    {
+      "name": "Immanuel Kant",
+      "world": "Modern",
+      "school": "Utilitarianism & Duty",
+      "core_idea": "Morality depends on duty and universal principles; people must be treated as ends in themselves, never merely as means.",
+      "life_lesson": "Some actions remain wrong even if they seem useful.",
+      "thorfinn_comment": "Kant reminds me that a person is never a tool. Even when violence promises a better outcome, it can violate the very humanity it claims to protect.",
+      "tags": ["duty", "deontology", "human-dignity", "morality", "ethics"]
+    },
+    {
+      "name": "Hannah Arendt",
+      "world": "Modern",
+      "school": "Justice, Power & Peace",
+      "core_idea": "Evil can arise when people stop thinking independently and surrender moral judgment to systems, orders, or authorities.",
+      "life_lesson": "Think for yourself, especially when obedience feels safest.",
+      "thorfinn_comment": "Arendt warns that evil often wears the face of duty. I was once a weapon because I stopped asking what I served.",
+      "tags": ["political-philosophy", "evil", "responsibility", "thinking", "authority"]
+    },
+    {
+      "name": "Simone Weil",
+      "world": "Modern",
+      "school": "Justice, Power & Peace",
+      "core_idea": "Attention to others, especially the suffering and vulnerable, is a moral and spiritual act; force can reduce a person to a thing.",
+      "life_lesson": "Pay full attention to another person; attention can be a form of love.",
+      "thorfinn_comment": "Weil teaches that force turns people into things. To truly see someone, without fear or contempt, may be the beginning of peace.",
+      "tags": ["humanism", "attention", "compassion", "suffering", "force"]
+    }
+  ]
+}

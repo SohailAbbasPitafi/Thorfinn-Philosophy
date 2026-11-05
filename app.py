@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 
@@ -24,7 +24,7 @@ def figure_to_dict(conn, row):
 
 @app.route("/")
 def home():
-    return "Thorfinn's philosophy API is running."
+    return render_template("index.html")
 
 
 @app.route("/api/schools")

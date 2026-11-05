@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thorfinn's Philosophy Path</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Thorfinn's Philosophy Path</h1>
+    <p>Greek thinkers, modern philosophers and anime characters, seen through a calmer mind.</p>
+  </header>
+
+  <section class="filters">
+    <select id="worldFilter">
+      <option value="">All worlds</option>
+      <option value="Anime">Anime</option>
+      <option value="Greek">Greek</option>
+      <option value="Modern">Modern</option>
+    </select>
+
+    <select id="schoolFilter">
+      <option value="">All schools</option>
+    </select>
+
+    <input type="text" id="tagFilter" placeholder="Search by tag (e.g. freedom)">
+    <button id="resetBtn">Reset</button>
+  </section>
+
+  <p id="resultCount"></p>
+  <main id="cardGrid"></main>
+
+  <!-- Detail popup -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close">&times;</button>
+      <h2 id="modalName"></h2>
+      <p id="modalMeta" class="meta"></p>
+
+      <h3>Core idea</h3>
+      <p id="modalIdea"></p>
+
+      <h3>Life lesson</h3>
+      <p id="modalLesson"></p>
+
+      <h3>Thorfinn says</h3>
+      <blockquote id="modalComment"></blockquote>
+
+      <div id="modalTags" class="tags"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

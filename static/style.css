@@ -1,0 +1,129 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: #14161a;
+  color: #e6e2d8;
+  line-height: 1.5;
+}
+
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+header h1 { margin: 0 0 8px; letter-spacing: 1px; }
+header p { margin: 0; color: #a9a597; }
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.filters select,
+.filters input,
+.filters button {
+  padding: 10px 14px;
+  background: #1f2227;
+  color: #e6e2d8;
+  border: 1px solid #3a3e45;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.filters button { cursor: pointer; }
+.filters button:hover { background: #2a2e35; }
+
+#resultCount {
+  text-align: center;
+  color: #a9a597;
+}
+
+#cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+  padding: 20px 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #1f2227;
+  border: 1px solid #3a3e45;
+  border-radius: 10px;
+  padding: 18px;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #c9a15b;
+}
+
+.card h3 { margin: 0 0 6px; }
+.card .meta { color: #c9a15b; font-size: 0.85rem; margin: 0 0 10px; }
+.card .lesson { color: #cfcabc; font-size: 0.95rem; margin: 0; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+.tag {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border: 1px solid #3a3e45;
+  border-radius: 999px;
+  color: #a9a597;
+}
+
+/* Popup */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.hidden { display: none; }
+
+.modal-content {
+  position: relative;
+  background: #1f2227;
+  border: 1px solid #c9a15b;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+}
+
+.modal-content h2 { margin-top: 0; }
+.modal-content h3 { color: #c9a15b; margin-bottom: 4px; }
+.modal-content .meta { color: #a9a597; margin-top: -8px; }
+
+blockquote {
+  margin: 0;
+  padding: 10px 16px;
+  border-left: 3px solid #c9a15b;
+  background: #181a1f;
+  font-style: italic;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #e6e2d8;
+  font-size: 1.8rem;
+  cursor: pointer;
+}

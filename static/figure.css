@@ -1,0 +1,143 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #F4F1EA;
+  line-height: 1.6;
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    ellipse at top,
+    color-mix(in srgb, var(--highlight) 20%, transparent),
+    transparent 60%
+  );
+  background-repeat: no-repeat;
+}
+
+.back {
+  display: inline-block;
+  margin: 24px 0 0 32px;
+  color: var(--highlight);
+  text-decoration: none;
+}
+.back:hover { text-decoration: underline; }
+
+.hero {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 24px 10px;
+  animation: rise 0.5s ease both;
+}
+
+.portrait {
+  flex: 0 0 240px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 2px solid var(--highlight);
+  border-radius: 14px;
+  background: linear-gradient(160deg, var(--primary), var(--bg));
+  box-shadow: 0 0 40px color-mix(in srgb, var(--highlight) 25%, transparent);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.initials {
+  font-size: 5rem;
+  letter-spacing: 4px;
+  color: var(--highlight);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--highlight);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.hero-text h1 { margin: 0 0 14px; font-size: 2.4rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag {
+  font-size: 0.8rem;
+  padding: 3px 12px;
+  border: 1px solid color-mix(in srgb, var(--highlight) 45%, transparent);
+  border-radius: 999px;
+  color: var(--highlight);
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 24px 80px;
+  display: grid;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--highlight) 25%, transparent);
+  border-radius: 12px;
+  padding: 22px 26px;
+  animation: rise 0.6s ease both;
+}
+
+.panel h2 {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--highlight);
+}
+
+.panel p { margin: 0; }
+
+blockquote {
+  margin: 0;
+  padding: 6px 18px;
+  border-left: 3px solid var(--accent);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.thorfinn-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.thorfinn-head h2 { margin: 0; }
+
+.thorfinn-badge {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--badge-bg);
+  border: 2px solid var(--badge-border);
+  border-radius: 50%;
+  font-weight: bold;
+}
+.chat-placeholder {
+  border-style: dashed;
+  color: #a9a597;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 700px) {
+  .hero { flex-direction: column; text-align: center; }
+  .portrait { flex-basis: auto; width: 220px; }
+  .tags { justify-content: center; }
+}

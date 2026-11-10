@@ -50,9 +50,11 @@ async function loadFigures() {
     });
     card.appendChild(tagBox);
 
+    card.style.setProperty("--card-accent", fig.theme.highlight);
     card.addEventListener("click", function () {
-      openFigure(fig.id);
+      window.location.href = "/figure/" + fig.id;
     });
+
     grid.appendChild(card);
   });
 }

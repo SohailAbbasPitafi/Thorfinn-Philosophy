@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ figure.name }} · Thorfinn's Philosophy Path</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='figure.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='mascot.css') }}">
+</head>
+
+<body style="--bg: {{ figure.theme.bg }};
+             --surface: {{ figure.theme.surface }};
+             --primary: {{ figure.theme.primary }};
+             --highlight: {{ figure.theme.highlight }};
+             --accent: {{ figure.theme.accent }};">
+
+  <a class="back" href="/">&larr; Back to all figures</a>
+
+  <section class="hero">
+    <div class="portrait">
+      {% if figure.image %}
+        <img src="{{ figure.image }}" alt="Portrait of {{ figure.name }}">
+      {% else %}
+        <span class="initials">{{ figure.initials }}</span>
+      {% endif %}
+    </div>
+
+    <div class="hero-text">
+      <p class="eyebrow">{{ figure.world }} &middot; {{ figure.school }}</p>
+      <h1>{{ figure.name }}</h1>
+      <div class="tags">
+        {% for tag in figure.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="panel">
+      <h2>Core idea</h2>
+      <p>{{ figure.core_idea }}</p>
+    </section>
+
+    <section class="panel">
+      <h2>Life lesson</h2>
+      <p>{{ figure.life_lesson }}</p>
+    </section>
+
+    <section class="panel thorfinn-panel">
+      <div class="thorfinn-head">
+        <span class="thorfinn-badge"
+              style="--badge-bg: {{ thorfinn.primary }}; --badge-border: {{ thorfinn.highlight }};">T</span>
+        <h2>Thorfinn says</h2>
+      </div>
+      <blockquote>{{ figure.thorfinn_comment }}</blockquote>
+    </section>
+
+    <!-- The chat between Thorfinn and this character will go here -->
+    <section class="panel chat-placeholder" id="chat">
+      <h2>Conversation</h2>
+      <p>Thorfinn and {{ figure.name }} will talk here soon.</p>
+    </section>
+  </main>
+
+  <div id="mascot">
+    <div id="mascot-bubble" class="hidden">
+      <p id="mascot-text"></p>
+      <div class="mascot-actions">
+        <button id="mascot-skip" type="button">Skip</button>
+        <button id="mascot-next" type="button">Next</button>
+      </div>
+    </div>
+    <img id="mascot-avatar" src="{{ url_for('static', filename='img/thorfinn.svg') }}" alt="Thorfinn, click to hear him again">
+  </div>
+  <script src="{{ url_for('static', filename='mascot.js') }}" defer></script>
+
+</body>
+</html>

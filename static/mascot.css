@@ -10,8 +10,9 @@
 }
 
 #mascot-avatar {
-  width: 150px;
-  height: auto;
+  height: 300px;
+  width: auto;
+  max-height: 45vh;
   cursor: pointer;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
   transition: transform 0.2s;
@@ -22,7 +23,7 @@
 #mascot-bubble {
   position: relative;
   max-width: 320px;
-  margin-bottom: 70px;
+  margin-bottom: 160px;
   padding: 16px 18px;
   background: #26292c;
   color: #f1ece2;
@@ -78,5 +79,5 @@
 @media (max-width: 600px) {
   #mascot { flex-direction: column; align-items: flex-end; right: 10px; }
   #mascot-bubble { max-width: 240px; margin-bottom: 0; }
-  #mascot-avatar { width: 100px; }
+  #mascot-avatar { height: 170px; }
 }

@@ -63,17 +63,17 @@
     </section>
   </main>
 
-  <div id="mascot">
+  <div id="mascot" data-store="session" data-key="figure-{{ figure.name }}"
+       data-lines='{{ (["Ah, " ~ figure.name ~ ". Let me tell you what I think."] + figure.thorfinn_comment.split(". "))|tojson }}'>
     <div id="mascot-bubble" class="hidden">
+      <span id="mascot-name">Thorfinn</span>
       <p id="mascot-text"></p>
       <div class="mascot-actions">
         <button id="mascot-skip" type="button">Skip</button>
         <button id="mascot-next" type="button">Next</button>
       </div>
     </div>
-    <img id="mascot-avatar" src="{{ url_for('static', filename='img/thorfinn.svg') }}" alt="Thorfinn, click to hear him again">
-  </div>
-  <script src="{{ url_for('static', filename='mascot.js') }}" defer></script>
-
-</body>
-</html>
+    <img id="mascot-avatar"
+         src="{{ url_for('static', filename='img/thorfinn.png') }}"
+         data-fallback="{{ url_for('static', filename='img/thorfinn.svg') }}"
+         onerror="this.onerror=null; this.src=this.dataset.fallback;"

@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thorfinn's Philosophy Path</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='mascot.css') }}">
 </head>
+
 <body>
   <header>
     <h1>Thorfinn's Philosophy Path</h1>
@@ -51,6 +53,30 @@
     </div>
   </div>
 
+  <div id="mascot" data-store="local" data-key="home"
+       data-lines='{{ [
+         "I am Thorfinn. I once lived only for revenge, and it left me empty.",
+         "This place is a path through the ideas of people who asked what a good life is.",
+         "You will find Greek thinkers, modern philosophers, and characters from stories I know.",
+         "Filter by world, school or tag, then open any card. I will tell you what I think of them.",
+         "Click me any time to hear this again."
+       ]|tojson }}'>
+    <div id="mascot-bubble" class="hidden">
+      <span id="mascot-name">Thorfinn</span>
+      <p id="mascot-text"></p>
+      <div class="mascot-actions">
+        <button id="mascot-skip" type="button">Skip</button>
+        <button id="mascot-next" type="button">Next</button>
+      </div>
+    </div>
+    <img id="mascot-avatar"
+         src="{{ url_for('static', filename='img/thorfinn.png') }}"
+         data-fallback="{{ url_for('static', filename='img/thorfinn.svg') }}"
+         onerror="this.onerror=null; this.src=this.dataset.fallback;"
+         alt="Thorfinn, click to hear him again">
+  </div>
+
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="{{ url_for('static', filename='mascot.js') }}" defer></script>
 </body>
 </html>

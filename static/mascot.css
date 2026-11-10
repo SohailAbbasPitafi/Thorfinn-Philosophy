@@ -1,39 +1,52 @@
 #mascot {
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 0;
   display: flex;
   align-items: flex-end;
-  gap: 12px;
+  gap: 8px;
   z-index: 1000;
+  animation: mascot-enter 0.7s ease-out;
 }
 
 #mascot-avatar {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
+  width: 150px;
+  height: auto;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
   transition: transform 0.2s;
 }
 
-#mascot-avatar:hover { transform: scale(1.06); }
+#mascot-avatar:hover { transform: translateY(-4px); }
 
 #mascot-bubble {
-  max-width: 280px;
-  padding: 14px 16px;
+  position: relative;
+  max-width: 320px;
+  margin-bottom: 70px;
+  padding: 16px 18px;
   background: #26292c;
   color: #f1ece2;
   border: 1px solid #8fae92;
-  border-radius: 14px 14px 4px 14px;
+  border-radius: 16px 16px 4px 16px;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.55;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
   animation: mascot-pop 0.3s ease;
 }
 
 #mascot-bubble.hidden { display: none; }
 
-#mascot-bubble p { margin: 0 0 10px; }
+#mascot-name {
+  display: block;
+  margin-bottom: 6px;
+  font-style: normal;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a24a;
+}
+
+#mascot-bubble p { margin: 0 0 12px; min-height: 3em; }
 
 .mascot-actions {
   display: flex;
@@ -42,7 +55,7 @@
 }
 
 .mascot-actions button {
-  padding: 5px 12px;
+  padding: 5px 14px;
   border-radius: 8px;
   border: 1px solid #8fae92;
   background: transparent;
@@ -52,12 +65,18 @@
 
 #mascot-next { background: #2f5d6b; }
 
+@keyframes mascot-enter {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
 @keyframes mascot-pop {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 600px) {
-  #mascot-bubble { max-width: 200px; }
-  #mascot-avatar { width: 64px; height: 64px; }
+  #mascot { flex-direction: column; align-items: flex-end; right: 10px; }
+  #mascot-bubble { max-width: 240px; margin-bottom: 0; }
+  #mascot-avatar { width: 100px; }
 }

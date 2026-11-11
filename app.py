@@ -8,10 +8,14 @@ app = Flask(__name__)
 
 DB_PATH = "data/philosophy.db"
 THEMES_PATH = "data/themes.json"
+DIALOGUES_PATH = "data/dialogues.json"
 IMAGE_EXTENSIONS = ("jpg", "jpeg", "png", "webp", "svg")
 
 with open(THEMES_PATH, encoding="utf-8") as f:
     THEMES = json.load(f)
+
+with open(DIALOGUES_PATH, encoding="utf-8") as f:
+    DIALOGUES = json.load(f)
 
 
 def get_db():
@@ -84,7 +88,13 @@ def figure_page(figure_id):
     conn.close()
     if figure is None:
         abort(404)
-    return render_template("figure.html", figure=figure, thorfinn=THEMES["_thorfinn"])
+    dialogue = DIALOGUES.get(figure["name"], [])
+    return render_template(
+        "figure.html",
+        figure=figure,
+        thorfinn=THEMES["_thorfinn"],
+        dialogue=dialogue,
+    )
 
 
 @app.route("/api/schools")
@@ -136,6 +146,16 @@ def get_figure(figure_id):
     if figure is None:
         return jsonify({"error": "Figure not found"}), 404
     return jsonify(figure)
+
+
+@app.route("/api/dialogue/<int:figure_id>")
+def get_dialogue(figure_id):
+    conn = get_db()
+    figure = fetch_figure(conn, figure_id)
+    conn.close()
+    if figure is None:
+        return jsonify({"error": "Figure not found"}), 404
+    return jsonify(DIALOGUES.get(figure["name"], []))
 
 
 if __name__ == "__main__":

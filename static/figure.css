@@ -143,3 +143,91 @@ blockquote {
   .portrait { flex-basis: auto; width: 220px; }
   .tags { justify-content: center; }
 }
+.chat-log {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.msg {
+  max-width: 82%;
+  padding: 10px 16px 12px;
+  border-radius: 14px;
+  animation: rise 0.35s ease both;
+}
+
+.msg p { margin: 0; }
+
+.msg-name {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.msg-hidden { display: none; }
+
+.from-thorfinn {
+  align-self: flex-start;
+  background: color-mix(in srgb, var(--t-primary) 35%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--t-highlight) 50%, transparent);
+  border-bottom-left-radius: 4px;
+}
+.from-thorfinn .msg-name { color: var(--t-highlight); }
+
+.from-figure {
+  align-self: flex-end;
+  background: color-mix(in srgb, var(--primary) 30%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--highlight) 50%, transparent);
+  border-bottom-right-radius: 4px;
+}
+.from-figure .msg-name { color: var(--highlight); }
+
+/* typing dots */
+.typing { padding: 12px 16px; }
+.typing span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background: var(--highlight);
+  opacity: 0.3;
+  animation: blink 1s infinite;
+}
+.typing span:nth-child(2) { animation-delay: 0.15s; }
+.typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.25; }
+  40% { opacity: 1; }
+}
+
+.chat-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.chat-controls [hidden] { display: none; }
+
+.chat-controls button {
+  padding: 8px 18px;
+  background: var(--primary);
+  color: #F4F1EA;
+  border: 1px solid var(--highlight);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.chat-controls button:hover {
+  background: color-mix(in srgb, var(--primary) 70%, var(--highlight));
+}
+
+#chat-count { color: #a9a597; font-size: 0.85rem; }
+
+@media (max-width: 700px) {
+  .msg { max-width: 92%; }
+}

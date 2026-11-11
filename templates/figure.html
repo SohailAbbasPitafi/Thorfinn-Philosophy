@@ -12,7 +12,9 @@
              --surface: {{ figure.theme.surface }};
              --primary: {{ figure.theme.primary }};
              --highlight: {{ figure.theme.highlight }};
-             --accent: {{ figure.theme.accent }};">
+             --accent: {{ figure.theme.accent }};
+             --t-primary: {{ thorfinn.primary }};
+             --t-highlight: {{ thorfinn.highlight }};">
 
   <a class="back" href="/">&larr; Back to all figures</a>
 
@@ -56,10 +58,25 @@
       <blockquote>{{ figure.thorfinn_comment }}</blockquote>
     </section>
 
-    <!-- The chat between Thorfinn and this character will go here -->
-    <section class="panel chat-placeholder" id="chat">
+    <section class="panel chat-panel" id="chat">
       <h2>Conversation</h2>
-      <p>Thorfinn and {{ figure.name }} will talk here soon.</p>
+      {% if dialogue %}
+        <div id="chat-log" class="chat-log">
+          {% for line in dialogue %}
+            <div class="msg {{ 'from-thorfinn' if line.speaker == 'Thorfinn' else 'from-figure' }} msg-hidden">
+              <span class="msg-name">{{ line.speaker }}</span>
+              <p>{{ line.text }}</p>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="chat-controls">
+          <button id="chat-next" type="button">Continue</button>
+          <button id="chat-replay" type="button" hidden>Replay</button>
+          <span id="chat-count"></span>
+        </div>
+      {% else %}
+        <p>Thorfinn and {{ figure.name }} will talk here soon.</p>
+      {% endif %}
     </section>
   </main>
 
@@ -77,3 +94,10 @@
          src="{{ url_for('static', filename='img/thorfinn.png') }}"
          data-fallback="{{ url_for('static', filename='img/thorfinn.svg') }}"
          onerror="this.onerror=null; this.src=this.dataset.fallback;"
+         alt="Thorfinn, click to hear him again">
+  </div>
+
+  <script src="{{ url_for('static', filename='chat.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='mascot.js') }}" defer></script>
+</body>
+</html>

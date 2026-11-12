@@ -3,6 +3,7 @@ import json
 import sqlite3
 import unicodedata
 from flask import Flask, jsonify, request, render_template, abort
+from matcher import Matcher
 
 app = Flask(__name__)
 
@@ -17,6 +18,14 @@ with open(THEMES_PATH, encoding="utf-8") as f:
 with open(DIALOGUES_PATH, encoding="utf-8") as f:
     DIALOGUES = json.load(f)
 
+matcher = Matcher(DB_PATH, DIALOGUES)
+
+MIN_SCORE = 0.04   # below this, Thorfinn admits he is not sure
+
+CRISIS_WORDS = (
+    "kill myself", "suicide", "end my life", "want to die",
+    "hurt myself", "self harm", "self-harm", "don't want to live",
+)
 
 def get_db():
     conn = sqlite3.connect(DB_PATH)
@@ -157,6 +166,49 @@ def get_dialogue(figure_id):
         return jsonify({"error": "Figure not found"}), 404
     return jsonify(DIALOGUES.get(figure["name"], []))
 
+@app.route("/api/match", methods=["POST"])
+def match_situation():
+    data = request.get_json(silent=True) or {}
+    text = (data.get("text") or "").strip()[:500]
+
+    if len(text) < 5:
+        return jsonify({"reply": "Tell me a little more.", "matches": []}), 400
+
+    lowered = text.lower()
+    if any(word in lowered for word in CRISIS_WORDS):
+        return jsonify({
+            "reply": "That sounds very heavy, and I am glad you said it. "
+                     "Please talk to someone you trust right now, or contact "
+                     "a local emergency number or crisis line. "
+                     "You do not have to carry this alone.",
+            "matches": [],
+        })
+
+    results = matcher.match(text, n=3)
+    if not results or results[0]["score"] < MIN_SCORE:
+        return jsonify({
+            "reply": "I am not sure which voice fits this. Try describing "
+                     "what you feel, or what you are struggling with, in other words.",
+            "matches": [],
+        })
+
+    first = results[0]
+    reply = f"What you describe reminds me of {first['name']}. {first['thorfinn_comment']}"
+    if len(results) > 1:
+        reply += f" {results[1]['name']} sees it differently: {results[1]['life_lesson']}"
+
+    matches = [
+        {
+            "id": r["id"],
+            "name": r["name"],
+            "world": r["world"],
+            "school": r["school"],
+            "life_lesson": r["life_lesson"],
+            "highlight": THEMES.get(r["name"], THEMES["_thorfinn"])["highlight"],
+        }
+        for r in results
+    ]
+    return jsonify({"reply": reply, "matches": matches})
 
 if __name__ == "__main__":
     app.run(debug=True)

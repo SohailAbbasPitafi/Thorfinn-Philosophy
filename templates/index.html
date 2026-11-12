@@ -1,82 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thorfinn's Philosophy Path</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='mascot.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thorfinn's Philosophy Path</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mascot.css') }}">
 </head>
 
 <body>
-  <header>
-    <h1>Thorfinn's Philosophy Path</h1>
-    <p>Greek thinkers, modern philosophers and anime characters, seen through a calmer mind.</p>
-  </header>
+    <header>
+        <h1>Thorfinn's Philosophy Path</h1>
+        <p>Greek thinkers, modern philosophers and anime characters, seen through a calmer mind.</p>
+    </header>
 
-  <section class="filters">
-    <select id="worldFilter">
-      <option value="">All worlds</option>
-      <option value="Anime">Anime</option>
-      <option value="Greek">Greek</option>
-      <option value="Modern">Modern</option>
-    </select>
+    <!-- Situation section -->
+    <section class="situation">
+        <h2>Tell Thorfinn your situation</h2>
+        <p class="situation-hint">
+            Describe what you are dealing with. He will point you to the voices that fit.
+        </p>
 
-    <select id="schoolFilter">
-      <option value="">All schools</option>
-    </select>
+        <textarea
+            id="situationText"
+            rows="3"
+            maxlength="500"
+            placeholder="For example: I want revenge on someone who hurt me"
+        ></textarea>
 
-    <input type="text" id="tagFilter" placeholder="Search by tag (e.g. freedom)">
-    <button id="resetBtn">Reset</button>
-  </section>
+        <button id="situationBtn" type="button">Ask Thorfinn</button>
 
-  <p id="resultCount"></p>
-  <main id="cardGrid"></main>
+        <div id="situationResult" class="situation-result" hidden>
+            <p id="situationReply"></p>
+            <div id="situationCards"></div>
+        </div>
+    </section>
 
-  <!-- Detail popup -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <button id="closeModal" class="close">&times;</button>
-      <h2 id="modalName"></h2>
-      <p id="modalMeta" class="meta"></p>
+    <!-- Filters -->
+    <section class="filters">
+        <select id="worldFilter">
+            <option value="">All worlds</option>
+            <option value="Anime">Anime</option>
+            <option value="Greek">Greek</option>
+            <option value="Modern">Modern</option>
+        </select>
 
-      <h3>Core idea</h3>
-      <p id="modalIdea"></p>
+        <select id="schoolFilter">
+            <option value="">All schools</option>
+        </select>
 
-      <h3>Life lesson</h3>
-      <p id="modalLesson"></p>
+        <input
+            type="text"
+            id="tagFilter"
+            placeholder="Search by tag (e.g. freedom)"
+        >
 
-      <h3>Thorfinn says</h3>
-      <blockquote id="modalComment"></blockquote>
+        <button id="resetBtn">Reset</button>
+    </section>
 
-      <div id="modalTags" class="tags"></div>
+    <p id="resultCount"></p>
+
+    <main id="cardGrid"></main>
+
+    <!-- Detail popup -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="close">&times;</button>
+
+            <h2 id="modalName"></h2>
+            <p id="modalMeta" class="meta"></p>
+
+            <h3>Core idea</h3>
+            <p id="modalIdea"></p>
+
+            <h3>Life lesson</h3>
+            <p id="modalLesson"></p>
+
+            <h3>Thorfinn says</h3>
+            <blockquote id="modalComment"></blockquote>
+
+            <div id="modalTags" class="tags"></div>
+        </div>
     </div>
-  </div>
 
-  <div id="mascot" data-store="local" data-key="home"
-       data-lines='{{ [
-         "I am Thorfinn. I once lived only for revenge, and it left me empty.",
-         "This place is a path through the ideas of people who asked what a good life is.",
-         "You will find Greek thinkers, modern philosophers, and characters from stories I know.",
-         "Filter by world, school or tag, then open any card. I will tell you what I think of them.",
-         "Click me any time to hear this again."
-       ]|tojson }}'>
-    <div id="mascot-bubble" class="hidden">
-      <span id="mascot-name">Thorfinn</span>
-      <p id="mascot-text"></p>
-      <div class="mascot-actions">
-        <button id="mascot-skip" type="button">Skip</button>
-        <button id="mascot-next" type="button">Next</button>
-      </div>
+    <!-- Thorfinn mascot -->
+    <div
+        id="mascot"
+        data-store="local"
+        data-key="home"
+        data-lines='{{ [
+            "I am Thorfinn. I once lived only for revenge, and it left me empty.",
+            "This place is a path through the ideas of people who asked what a good life is.",
+            "You will find Greek thinkers, modern philosophers, and characters from stories I know.",
+            "Filter by world, school or tag, then open any card. I will tell you what I think of them.",
+            "Click me any time to hear this again."
+        ]|tojson }}'
+    >
+        <div id="mascot-bubble" class="hidden">
+            <span id="mascot-name">Thorfinn</span>
+            <p id="mascot-text"></p>
+
+            <div class="mascot-actions">
+                <button id="mascot-skip" type="button">Skip</button>
+                <button id="mascot-next" type="button">Next</button>
+            </div>
+        </div>
+
+        <img
+            id="mascot-avatar"
+            src="{{ url_for('static', filename='img/thorfinn.png') }}"
+            data-fallback="{{ url_for('static', filename='img/thorfinn.svg') }}"
+            onerror="this.onerror=null; this.src=this.dataset.fallback;"
+            alt="Thorfinn, click to hear him again"
+        >
     </div>
-    <img id="mascot-avatar"
-         src="{{ url_for('static', filename='img/thorfinn.png') }}"
-         data-fallback="{{ url_for('static', filename='img/thorfinn.svg') }}"
-         onerror="this.onerror=null; this.src=this.dataset.fallback;"
-         alt="Thorfinn, click to hear him again">
-  </div>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
-  <script src="{{ url_for('static', filename='mascot.js') }}" defer></script>
+    <!-- JavaScript files -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='mascot.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='match.js') }}" defer></script>
+
 </body>
 </html>

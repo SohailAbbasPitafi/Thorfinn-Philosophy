@@ -80,14 +80,14 @@ assistance, and I am reviewing and rewriting them in my own words.
 The philosophical summaries are simplified for a general audience.
 
 
+
 ## Credits and image note
 
-Portraits of the historical figures are AI-generated illustrations (created
-with ChatGPT's image generation) and are not real portraits or photographs.
-Anime character images and the Thorfinn mascot are AI-generated fan art, and
-the characters belong to their creators. They are used here only in this
-non-commercial learning project. Some of these images may not be included in
-the repository, in which case the site shows the character's initials instead.
+All portraits and the Thorfinn mascot are AI-generated illustrations (created
+with ChatGPT's image generation). They are not real portraits or photographs.
+The anime characters and Thorfinn belong to their creators and publishers, and
+these images are fan art used only in this non-commercial learning project. I
+am not affiliated with the creators.
 
 ## Ideas for the future
 
